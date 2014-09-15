@@ -89,4 +89,39 @@ public class sqlconnection {
       }
     }
   }
+  public static boolean validateLogin(String name, String pass)
+  {
+    conn = getInstance();
+    ResultSet test = null;
+    String ergpass = null;
+    if(conn != null)
+    {
+      // Anfrage-Statement erzeugen.
+      Statement query;
+      try {
+        query = conn.createStatement();
+ 
+        // Ergebnistabelle erzeugen und abholen.
+        String sql = "SELECT * FROM user "
+            + "WHERE name = '" + name + "';";
+        System.out.println(""+sql);
+        ResultSet result = query.executeQuery(sql);
+       /* String testa = result.getString(1);
+        System.out.println(testa);*/
+        // Ergebnissätze durchfahren.
+        while (result.next()) {
+        	ergpass = result.getString(3); // Alternativ: result.getString(1);
+         // String last_name = result.getString("last_name"); // Alternativ: result.getString(2);
+        //  String name = last_name + ", " + first_name;
+          System.out.println(ergpass);
+        }
+       
+      } catch (SQLException e) {
+        System.out.println("NOPE");
+      }
+    }
+   // System.out.println(ergpass);
+    return ergpass.equals(pass);
+	
+  }
 }

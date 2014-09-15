@@ -122,7 +122,7 @@ public class PartnerboerseGui extends JFrame {
 		HomePannel.add(txtpnHierStehtIrgendeine);
 		txtpnHierStehtIrgendeine.setText("Hier steht irgendeine Kacke die keinen Interessiert und als Home Dings Funktioniert\r\nHier steht irgendeine Kacke die keinen Interessiert und als Home Dings Funktioniert\r\nHier steht irgendeine Kacke die keinen Interessiert und als Home Dings Funktioniert\r\nHier steht irgendeine Kacke die keinen Interessiert und als Home Dings Funktioniert\r\nHier steht irgendeine Kacke die keinen Interessiert und als Home Dings Funktioniert\r\n");
 		
-		JPanel SuchePannel = new JPanel();
+		final JPanel SuchePannel = new JPanel();
 		SuchePannel.setBounds(0, 0, 924, 560);
 		contentPane.add(SuchePannel);
 		SuchePannel.setLayout(null);
@@ -205,6 +205,7 @@ public class PartnerboerseGui extends JFrame {
 	            System.out.println("menuSelected");
 	            HomePannel.setVisible(false);
 				ProfilPannel.setVisible(true);
+				SuchePannel.setVisible(false);
 
 	        }
 
@@ -224,8 +225,9 @@ public class PartnerboerseGui extends JFrame {
 			
 			public void menuSelected(MenuEvent e) {
 	            System.out.println("menuSelected");
-	            HomePannel.setVisible(true);
+	            HomePannel.setVisible(false);
 				ProfilPannel.setVisible(false);
+				SuchePannel.setVisible(true);
 
 	        }
 
@@ -245,8 +247,9 @@ public class PartnerboerseGui extends JFrame {
 			
 			public void menuSelected(MenuEvent e) {
 	            System.out.println("menuSelected");
-	            HomePannel.setVisible(true);
+	            HomePannel.setVisible(false);
 				ProfilPannel.setVisible(false);
+				SuchePannel.setVisible(false);
 
 	        }
 

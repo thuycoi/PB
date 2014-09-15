@@ -56,13 +56,19 @@ public class PartnerboerseLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 					String name = textField_1.getText();
 					String paswd = textField.getText();
-					if(name.equals("test") && paswd.equals("12345")) {
+					/*if(name.equals("test") && paswd.equals("12345")) {
+					PartnerboerseGui gui = new PartnerboerseGui();
+					gui.setVisible(true);
+					dispose();*/
+					if(sqlconnection.validateLogin(name, paswd)) {
 					PartnerboerseGui gui = new PartnerboerseGui();
 					gui.setVisible(true);
 					dispose();
