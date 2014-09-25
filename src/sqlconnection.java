@@ -124,4 +124,32 @@ public class sqlconnection {
     return ergpass.equals(pass);
 	
   }
+  static int kp = 501;
+  public static void randomNameGenerator(){
+	  conn = getInstance();
+	  
+	  for(int i = 0;i<100;i++){
+		  String sql1 = "UPDATE `partnerboerse` SET `vorname`= 'name" + i + "' WHERE id = "+ kp +";";
+		  kp++;
+		
+		  if(conn != null)
+		    {
+		      // Anfrage-Statement erzeugen.
+		      Statement query;
+		      try {
+		        query = conn.createStatement();
+
+		       query.executeUpdate(sql1);
+		       
+		      
+		    } catch (SQLException e) {
+		        System.out.println("NOPE");
+		    }
+		}
+		  
+		  
+		  
+  }
+	  
+  }
 }

@@ -104,6 +104,8 @@ public class PartnerboerseGui extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				HomePannel.setVisible(false);
+				
+				sqlconnection.randomNameGenerator();
 			}
 		});
 		btnNewButton.setBounds(121, 425, 144, 74);
